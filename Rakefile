@@ -13,6 +13,6 @@ Motion::Project::App.setup do |app|
   app.files += Dir.glob('./lib/bubble-wrap/**.rb')
   wrapper_files = app.files.dup
   pollution_file = Dir.glob('./lib/pollute.rb')[0]
-  app.files << pollution_file
+  app.files.unshift pollution_file
   app.files_dependencies pollution_file => wrapper_files
 end
